@@ -16,7 +16,7 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-  likedPostsId.pluss(id);
+  likedPostsId.push(id);
   showPosts(posts);
 };
 
@@ -52,7 +52,7 @@ const switchTab = (id) => {
 
 const createPost = (post) => {
   const image = post.image;
-  console.log(post);
+  // console.log(post);
 
   const div = document.createElement("article");
   div.classList.add("post");
@@ -78,7 +78,7 @@ const createPost = (post) => {
 
               <div class="post__footer">
                 <div class="post__buttons">
-                  <button class="post__button" onclick="addToLiked('${post.id}')">
+                  <button class="post__button" onclick="addToLiked(${post.id})">
                   <i class="fa-solid fa-heart ${isLiked(post.id) && 'text-danger'}"></i>
                     
                   </button>
